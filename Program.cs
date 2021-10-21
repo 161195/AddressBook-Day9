@@ -6,7 +6,14 @@ namespace AddressBook
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Address Book World!");
+            ContactDetails contact = new ContactDetails();
+            contact.firstName = "Mayuri";
+            contact.lastName = "salunkhe";
+            contact.phoneNumber = "9881815815";
+            contact.address = "shahupuri ,satara";
+            contact.email = "mayurisalunkhe01@gmail.com";
+            contact.city = "satara";
+            Console.WriteLine("first name = " + contact.firstName);
         }
     }
 }
