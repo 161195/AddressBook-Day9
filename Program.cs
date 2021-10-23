@@ -26,6 +26,7 @@ namespace AddressBook
                 {
                     case 1:
                         AddObj.AddContact();
+
                         break;
 
                     case 2:
