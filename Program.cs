@@ -1,18 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace AddressBook
+namespace AddressBook01
 {
     class Program
     {
         static void Main(string[] args)
         {
+            //Class variable declaration
             int num;
-            //guide to user 
-            Console.WriteLine("__Welcome to the address book program__");
+            //AddressBook myAdd = new AddressBook();
+            //below lines of code is executed at the begining to guide the user to enter their choice
+            Console.WriteLine(".......Welcome to the address book program.....");
             Console.WriteLine();
             Console.WriteLine("Enter the number of Address Books you want to add:");
-            Console.WriteLine();
-            
             int numAddBook = Convert.ToInt32(Console.ReadLine());          //taking user inputs about the number of add books needed
             int numberBook = 0;
             Console.WriteLine();
@@ -23,38 +24,40 @@ namespace AddressBook
                 Console.WriteLine("Select the option that you would like to perform.");
                 Console.WriteLine();
                 //declaring address book object to be used in the below cases
-                AddressBook AddObj = new AddressBook();
+                AddressBook Person = new AddressBook();
                 string keyPress = "o";
 
                 while (keyPress != "n")
                 {
-                    Console.WriteLine("1- Add contact, 2- View contact,3-edit contact,4-delete contact");
+                    Console.WriteLine("1- Add contact, 2- View all contacts, 3- Edit contact, 4- Delete contact");
                     num = Convert.ToInt32(Console.ReadLine());
 
-                    switch (num)               //switch case 
+                    switch (num)                                            //this switch case selects or enables the user to select multiple cases
                     {
                         case 1:
-                            AddObj.AddContact();
+                            Person.AddAddress();                            //method to add a new contact
                             break;
 
                         case 2:
-                            AddObj.View();
+                            Person.View();                                  //method invoking to view all the contacts
                             break;
 
                         case 3:
-                            AddObj.Edit();
+                            Person.Edit();                                  //method to edit the contacts
                             break;
 
                         case 4:
-                            AddObj.Delete();                                  //method to delete the contacts
+                            Person.Delete();                                  //method to delete the contacts
                             break;
+
                     }
-                    Console.WriteLine("Do you wish to continue? Press (y/n)");
+                    Console.WriteLine("Do you wish to continue?----- Press (y/n)");
                     keyPress = Console.ReadLine();
                 }
                 AddressBook.AddTo(book);                         //calling the AddTo method to add the new address book in the dictionary
                 numberBook++;                                    //incrementing the variable
             }
         }
+
     }
 }
