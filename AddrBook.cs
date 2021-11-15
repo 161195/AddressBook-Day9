@@ -167,5 +167,48 @@ namespace AddressBook01
             }
             return 0;
         }
+        //method of starting with city
+        public static void SearchWithCity()
+        {
+            Console.WriteLine("Please enter the name of the city");
+            string city = Console.ReadLine();
+            //foreach (KeyValuePair<string, List<Contacts>> item in addressBook)    //(will work if we can permenantly store data somewhere like and not temporary heap memory"
+            //{
+            foreach (var Details in contact)
+            {
+                var person = contact.Find(p => p.city.Equals(city));
+                if (person != null)
+                {
+                    Console.WriteLine("{0} person resides in the {1}", Details.firstName, city);
+                }
+                else
+                {
+                    //pass
+                }
+            }
+            //}
+        }
+        //method of searching with state
+        public static void SearchWithState()
+        {
+            Console.WriteLine("Please enter the name of the state");
+            string state = Console.ReadLine();
+            //foreach (KeyValuePair<string, List<Contacts>> item in addressBook)    //(will work if we can permenantly store data somewhere like and not temporary heap memory"
+            //{
+            foreach (var Details in contact)
+            {
+                var person = contact.Find(p => p.state.Equals(state));
+                if (person != null)
+                {
+                    Console.WriteLine("{0} person resides in the {1}", Details.firstName, state);
+                }
+                else
+                {
+                    //pass
+                }
+            }
+            //}
+        }
+
     }
 }
