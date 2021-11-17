@@ -12,7 +12,7 @@ namespace AddressBook01
             int num;
             //AddressBook myAdd = new AddressBook();
             //below lines of code is executed at the begining to guide the user to enter their choice
-            Console.WriteLine(".....Welcome to the address book program....");
+            Console.WriteLine("*****Welcome to the address book program*****");
             Console.WriteLine();
             Console.WriteLine("Enter the number of Address Books you want to add:");
             int numAddBook = Convert.ToInt32(Console.ReadLine());          //taking user inputs about the number of add books needed
@@ -30,7 +30,8 @@ namespace AddressBook01
 
                 while (keyPress != "n")
                 {
-                    Console.WriteLine("1- Add contact, 2- View all contacts, 3- Edit contact, 4- Delete contact", "5- Search by city", "6- Serach by state");
+                    Console.WriteLine("1- Add contact, 2- View all contacts, 3- Edit contact, 4- Delete contact, 5- Search by city, 6- Serach by state");
+                    Console.WriteLine("7- View by state/city");
                     num = Convert.ToInt32(Console.ReadLine());
 
                     switch (num)                                            //this switch case selects or enables the user to select multiple cases
@@ -57,13 +58,18 @@ namespace AddressBook01
                         case 6:
                             AddressBook.SearchWithState();                 //searching with state
                             break;
+                        case 7:
+                            Person.ViewBy();                               //view by city or state
+                            break;
 
 
                     }
+                    Person.AddByCity();              //Adding to the citybook and statebook dictionaries.
+                    Person.AddByState();
                     Console.WriteLine("Do you wish to continue?----- Press (y/n)");
                     keyPress = Console.ReadLine();
                 }
-                AddressBook.AddTo(book);                         //calling the AddTo method to add the new address book in the dictionary   
+                AddressBook.AddTo(book);                         //calling the AddTo method to add the new address book in the dictionary
                 numberBook++;                                    //incrementing the variable
             }
         }
