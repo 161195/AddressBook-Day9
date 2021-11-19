@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -394,6 +395,51 @@ namespace AddressBook01
             }
 
 
+        }
+        public static void WriteAddressBookUsingStreamWriter()
+        {
+            //provide file path
+            string path = @"C:\Users\91992\Desktop\c# Assignments\AddressBook\Files\AddressBook1.txt";
+            // Appending the given texts using streamwriter class and inbuilt File class method.
+            using (StreamWriter write = File.AppendText(path))       
+            {
+                //iterating each element from addressbook dictionary
+                foreach (KeyValuePair<string, List<Contacts>> item in addressBook)  //creating keyvaluepair which belogs to generics class.
+                {
+                    foreach (var items in item.Value)
+                    {
+                        //writing in .txt file
+                        write.WriteLine("First Name -" + items.firstName);
+                        write.WriteLine("Last Name -" + items.lastName);
+                        write.WriteLine("Address -" + items.address);
+                        write.WriteLine("Phone Number - " + items.phoneNumber);
+                        write.WriteLine("Email ID -" + items.email);
+                        write.WriteLine("City -" + items.city);
+                        write.WriteLine("State -" + items.state);
+                        write.WriteLine("ZIP code -" + items.zip);
+                    }
+                    write.WriteLine("--------------------------------------------------------------");
+                }
+                write.Close();
+                Console.WriteLine(File.ReadAllText(path));
+            }
+        }
+        //This method for reading address book with person contact from .txt file using File IO
+        public static void ReadAddressBookUsingStreamReader()
+        {
+            Console.WriteLine("The contact List using StreamReader method ");
+
+            string path = @"C:\Users\91992\Desktop\c# Assignments\AddressBook\Files\AddressBook1.txt";
+            // opening the given texts using streareader class and inbuilt File class method.
+            using (StreamReader read = File.OpenText(path))
+            {
+                string s = " ";
+                while ((s = read.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+
+            }
         }
     }
 }

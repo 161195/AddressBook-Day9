@@ -5,7 +5,6 @@ namespace AddressBook01
 {
     class Program
     {
-
         static void Main(string[] args)
         {
             //Class variable declaration
@@ -71,9 +70,12 @@ namespace AddressBook01
                     Console.WriteLine("Do you wish to continue?----- Press (y/n)");
                     keyPress = Console.ReadLine();
                 }
-                AddressBook.AddTo(book);                         //calling the AddTo method to add the new address book in the dictionary
+                AddressBook.AddTo(book);                         //calling the AddTo method to add the new address book in the dictionary 
                 numberBook++;                                    //incrementing the variable
+                AddressBook.WriteAddressBookUsingStreamWriter(); // calling write method
+                AddressBook.ReadAddressBookUsingStreamReader();  // calling read method
             }
+            
         }
 
     }
