@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -480,6 +481,38 @@ namespace AddressBook01
             }
 
 
+        }
+        public void JsonSearialize()
+        {
+            string path = @"C:\Users\91992\Desktop\c# Assignments\AddressBook\Files\contact.json";
+
+            Contacts person = new Contacts() { firstName = "Amit", lastName = "Salunkhe", address = "Satara", city = "Satara", state = "maharashtra", zip = "121212", email = "amit@gmail.com", phoneNumber = "1212121212" };
+            string result = JsonConvert.SerializeObject(person);
+            File.WriteAllText(path, result);
+        }
+
+        public void JsonDeSerialize()
+        {
+            try
+            {
+                string path = @"C:\Users\91992\Desktop\c# Assignments\AddressBook\Files\contact.json";
+                string result = File.ReadAllText(path);
+                Contacts res = JsonConvert.DeserializeObject<Contacts>(result);
+
+                if (res != null)
+                {
+                    Console.WriteLine("Contact Details");
+                    Console.WriteLine("FirstName={0}\tLastName={1}\t Address={2} City={3}\tState={4}\tZipcode={5}\t\tEmail={6} PhoneNumber={7}", res.firstName, res.lastName, res.address, res.city, res.state, res.zip, res.email, res.phoneNumber);
+                }
+                else
+                {
+                    Console.WriteLine("No Contact Details");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
     }

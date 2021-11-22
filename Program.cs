@@ -76,6 +76,9 @@ namespace AddressBook01
                 AddressBook.ReadAddressBookUsingStreamReader();  // calling read method
                 AddressBook.CsvSerialise();
                 AddressBook.CsvDeserialise();
+                Person.JsonSearialize();
+                Person.JsonDeSerialize();
+
             }
             
         }

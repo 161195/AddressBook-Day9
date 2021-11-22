@@ -43,3 +43,12 @@ City -Pune
 State -Maharashtra
 ZIP code -45612
 --------------------------------------------------------------
+First Name -Amit
+Last Name -salunkhe
+Address -Kanher
+Phone Number - 7894561231
+Email ID -amit@gmail.com
+City -Mumbai
+State -Maharashtra
+ZIP code -36985
+--------------------------------------------------------------
