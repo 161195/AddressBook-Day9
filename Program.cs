@@ -74,6 +74,8 @@ namespace AddressBook01
                 numberBook++;                                    //incrementing the variable
                 AddressBook.WriteAddressBookUsingStreamWriter(); // calling write method
                 AddressBook.ReadAddressBookUsingStreamReader();  // calling read method
+                AddressBook.CsvSerialise();
+                AddressBook.CsvDeserialise();
             }
             
         }

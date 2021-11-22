@@ -7,3 +7,39 @@ City -satara
 State -Maharashtra
 ZIP code -415002
 --------------------------------------------------------------
+First Name -Pratiksha
+Last Name -Salunkhe
+Address -shahupuri
+Phone Number - 1234567897
+Email ID -pratiksha@gmail.com
+City -Satara
+State -Maharashtra
+ZIP code -12345
+--------------------------------------------------------------
+First Name -Pratiksha
+Last Name -Salunkhe
+Address -Shahupuri
+Phone Number - 1234567897
+Email ID -pratiksha@gmail.com
+City -Satara
+State -Maharashtra
+ZIP code -12345
+--------------------------------------------------------------
+First Name -Pratiksha
+Last Name -Salunkhe
+Address -Shahupuri
+Phone Number - 234567897
+Email ID -pratiksha@gmail.com
+City -Satara
+State -Maharashtra
+ZIP code -12345
+--------------------------------------------------------------
+First Name -Rutuja
+Last Name -Barge
+Address -SamarthMandir
+Phone Number - 3216549879
+Email ID -rutuja@gmail.com
+City -Pune
+State -Maharashtra
+ZIP code -45612
+--------------------------------------------------------------
